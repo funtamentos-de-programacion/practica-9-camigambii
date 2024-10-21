@@ -1,24 +1,38 @@
 #include <stdio.h>
 
-
-// TODO: (22) Declara un prototipo de una función
-//  id: suma
-//  @return varible de tipo int
-//  @param una matriz
-//  @param el número de filas
-
+// Prototipo de las funciones
+int suma(int a[3][3], int f);
+int suma2(int a[3][3], int f, int c);
 
 int main() {
     int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int res = suma(arr, 3);
+    int *ptr = &res;
+    printf("%d\n", *ptr);
+    res = suma2(arr, 3, 3);
+    printf("%d\n", *ptr);
 
-    // TODO: (23) Crea una variable llamada resultado  y asigna lo que devuelve la función suma
-    // pasa a la función el arreglo y su tamaño
-    
-    
-    // TODO: (24) Imprime el resultado
-    
     return 0;
 }
 
+// Función suma para arreglos bidimensionales
+int suma(int a[3][3], int f) {
+    int r = 0;
+    for (int i = 0; i < f; i++) {
+        for (int j = 0; j < 3; j++) {
+            r += a[i][j];
+        }
+    }
+    return r;
+}
 
-//TODO: (25) Crea la función suma que realiza la suma de todos los elementos de un arreglo
+// Función suma2 para arreglos bidimensionales
+int suma2(int a[3][3], int f, int c) {
+    int r = 0;
+    for (int i = 0; i < f; i++) {
+        for (int j = 0; j < c; j++) {
+            r += a[i][j];
+        }
+    }
+    return r;
+}
